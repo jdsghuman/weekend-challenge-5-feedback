@@ -16,7 +16,7 @@ class Review extends Component {
     axios.post('/submit', data)
       .then(res => {
         this.props.dispatch({type: 'RESET_INFO'});
-        this.props.history.push('/');
+        this.props.history.push('/confirmation');
       })
       .catch(err => {
         console.log('Error in POST ', err);
