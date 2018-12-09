@@ -24,6 +24,7 @@ class Supported extends Component {
       <div>
         <Steps step={"3"} />
         <h2>How well are you being supported?</h2>
+        {/* Star rating */}
         <Rating
           initialRating={this.state.supported}
           onClick={this.handleStarClick}
@@ -31,7 +32,6 @@ class Supported extends Component {
           fullSymbol={<Star />}
         />
         <button onClick={this.handleNext}>Next</button>
-        {JSON.stringify(this.state.supported)}
       </div>
     );
   }

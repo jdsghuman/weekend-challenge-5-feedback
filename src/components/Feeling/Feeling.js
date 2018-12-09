@@ -27,7 +27,7 @@ class Feeling extends Component {
       <div>
         <Steps step={"1"} />
         <h2>How are you feeling today?</h2>
-
+        {/* Star rating */}
         <Rating
           initialRating={this.state.feeling}
           onClick={this.handleStarClick}

@@ -22,6 +22,7 @@ class Comment extends Component {
       <div>
         <Steps step={"4"} />
         <h2>Any comments you want to leave?</h2>
+        {/* Enter comment */}
         <textarea onChange={this.handleChange} placeholder="Enter your comment here..." />
         <button onClick={this.handleNext}>Next</button>
       </div>
