@@ -5,6 +5,12 @@ import Star from '@material-ui/icons/Star';
 import StarBorder from '@material-ui/icons/StarBorder';
 import { connect } from 'react-redux';
 
+const styles = {
+  largeIcon: {
+    fontSize: '4rem'
+  }
+}
+
 class Supported extends Component {
   state = {
     supported: 0
@@ -28,8 +34,8 @@ class Supported extends Component {
         <Rating
           initialRating={this.state.supported}
           onClick={this.handleStarClick}
-          emptySymbol={<StarBorder />}
-          fullSymbol={<Star />}
+          emptySymbol={<StarBorder style={styles.largeIcon} />}
+          fullSymbol={<Star style={styles.largeIcon} />}
         />
         <button onClick={this.handleNext}>Next</button>
       </div>

@@ -6,6 +6,7 @@ import Supported from '../Supported/Supported';
 import Comment from '../Comment/Comment';
 import Review from '../Review/Review';
 import Confirmation from '../Confirmation/Confirmation';
+import Admin from '../Admin/Admin';
 
 import { HashRouter as Router, Route } from 'react-router-dom';
 import './App.css';
@@ -23,6 +24,7 @@ class App extends Component {
           <Route path="/4" component={Comment}></Route>
           <Route path="/review" component={Review}></Route>
           <Route path="/confirmation" component={Confirmation}></Route>
+          <Route path="/admin" component={Admin}></Route>
         </div>
       </Router>
     );

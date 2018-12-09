@@ -6,6 +6,12 @@ import Star from '@material-ui/icons/Star';
 import StarBorder from '@material-ui/icons/StarBorder';
 import { connect } from 'react-redux';
 
+const styles = {
+  largeIcon: {
+    fontSize: '4rem'
+  }
+}
+
 class Feeling extends Component {
 
   state = {
@@ -31,8 +37,8 @@ class Feeling extends Component {
         <Rating
           initialRating={this.state.feeling}
           onClick={this.handleStarClick}
-          emptySymbol={<StarBorder />}
-          fullSymbol={<Star />}
+          emptySymbol={<StarBorder style={styles.largeIcon} />}
+          fullSymbol={<Star style={styles.largeIcon} />}
         />
         <button onClick={this.handleNext}>Next</button>
         {JSON.stringify(this.state.feeling)}
