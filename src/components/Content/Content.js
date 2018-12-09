@@ -7,16 +7,16 @@ import { connect } from 'react-redux';
 
 class Content extends Component {
   state = {
-    value: 0
+    content: 0
   }
 
   handleNext = (event) => {
-    this.props.dispatch({type: 'ADD_CONTENT', payload: this.state.value});
+    this.props.dispatch({type: 'ADD_CONTENT', payload: this.state.content});
     this.props.history.push('/3');
   }
 
   handleStarClick = (value) => {
-    this.setState({ value: value });
+    this.setState({ content: value });
   }
 
   render() {
@@ -25,13 +25,13 @@ class Content extends Component {
         <Steps step={"2"} />
         <h2>How well are you understanding the content?</h2>
         <Rating
-          initialRating={this.state.value}
+          initialRating={this.state.content}
           onClick={this.handleStarClick}
           emptySymbol={<StarBorder />}
           fullSymbol={<Star />}
         />
         <button onClick={this.handleNext}>Next</button>
-        {JSON.stringify(this.state.value)}
+        {JSON.stringify(this.state.content)}
       </div>
     );
   }

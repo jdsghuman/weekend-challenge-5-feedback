@@ -9,16 +9,16 @@ import { connect } from 'react-redux';
 class Feeling extends Component {
 
   state = {
-    value: 0
+    feeling: 0
   }
 
   handleNext = (event) => {
-    this.props.dispatch({type: 'ADD_FEELING', payload: this.state.value});
+    this.props.dispatch({type: 'ADD_FEELING', payload: this.state.feeling});
     this.props.history.push('/2');
   }
 
   handleStarClick = (value) => {
-    this.setState({ value: value });
+    this.setState({ feeling: value });
   }
 
   render() {
@@ -29,13 +29,13 @@ class Feeling extends Component {
         <h2>How are you feeling today?</h2>
 
         <Rating
-          initialRating={this.state.value}
+          initialRating={this.state.feeling}
           onClick={this.handleStarClick}
           emptySymbol={<StarBorder />}
           fullSymbol={<Star />}
         />
         <button onClick={this.handleNext}>Next</button>
-        {JSON.stringify(this.state.value)}
+        {JSON.stringify(this.state.feeling)}
       </div>
     );
   }
