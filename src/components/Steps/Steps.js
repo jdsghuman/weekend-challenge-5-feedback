@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// Styling for steps header
 const headerStyle = {
   borderBottom: '2px solid #5adbcf',
   display: 'inline-block',
@@ -7,8 +8,8 @@ const headerStyle = {
   color: '#5adbcf',
   fontWeight: '300'
 }
-class Steps extends Component {
 
+class Steps extends Component {
   render() {
     return(
       <div>

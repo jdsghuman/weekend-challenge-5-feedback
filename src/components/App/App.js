@@ -7,7 +7,6 @@ import Comment from '../Comment/Comment';
 import Review from '../Review/Review';
 
 import { HashRouter as Router, Route } from 'react-router-dom';
-import axios from 'axios';
 import './App.css';
 
 class App extends Component {
