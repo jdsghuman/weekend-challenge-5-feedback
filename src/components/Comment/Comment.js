@@ -5,7 +5,7 @@ import './Comment.css';
 
 class Comment extends Component {
   state = {
-    comment: 0
+    comment: ''
   }
 
   handleChange = (event) => {

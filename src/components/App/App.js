@@ -4,6 +4,7 @@ import Feeling from '../Feeling/Feeling';
 import Content from '../Content/Content';
 import Supported from '../Supported/Supported';
 import Comment from '../Comment/Comment';
+import Review from '../Review/Review';
 
 import { HashRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios';
@@ -20,6 +21,7 @@ class App extends Component {
           <Route path="/2" component={Content}></Route>
           <Route path="/3" component={Supported}></Route>
           <Route path="/4" component={Comment}></Route>
+          <Route path="/review" component={Review}></Route>
         </div>
       </Router>
     );
