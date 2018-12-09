@@ -3,17 +3,27 @@
 }
 
 .App-header {
-  background-color: #033076;
-  min-height: 70px;
-  padding: 20px;
+  background-color: #5adbcf;
+  min-height: 100px;
+  padding: 18px;
   color: white;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2rem;
 }
 
 .App-intro {
   font-size: large;
+}
+
+svg { 
+  color: #08a99e;
+}
+
+h2 {
+  color: #08a99e;
+  padding: 5px;
+  padding-top: 0px;
 }
 

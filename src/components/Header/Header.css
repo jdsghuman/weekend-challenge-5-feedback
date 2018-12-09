@@ -1,0 +1,39 @@
+.container {
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+}
+header svg { 
+  color: #ffffff;
+  transform: translateY(10%);
+}
+
+.header-star {
+  font-size: 3rem;
+}
+
+.MuiSvgIcon-root-1 {
+  font-size: 4rem !important;
+}
+
+h1 {
+  display: flex;
+  padding-left: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  svg {
+    margin: 0 auto;
+  }
+
+  h1 {
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+}
