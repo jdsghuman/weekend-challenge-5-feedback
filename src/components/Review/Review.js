@@ -15,7 +15,7 @@ class Review extends Component {
 
     axios.post('/submit', data)
       .then(res => {
-        this.props.dispatch({type: 'CLEAR_INFO'});
+        this.props.dispatch({type: 'RESET_INFO'});
         this.props.history.push('/');
       })
       .catch(err => {
