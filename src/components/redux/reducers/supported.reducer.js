@@ -1,13 +1,12 @@
-const feeling = (state = [], action) => {
+const supported = (state = [], action) => {
   switch(action.type) {
-    case 'ADD_FEELING':
+    case 'ADD_SUPPORTED':
       return action.payload;
     case 'RESET_INFO':
       return [];
     default:
       return state;
   }
-  
 }
 
-export default feeling;
+export default supported;

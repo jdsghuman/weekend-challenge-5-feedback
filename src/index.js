@@ -10,11 +10,13 @@ import logger from 'redux-logger';
 // Import reducers
 import feeling from './components/redux/reducers/feeling.reducer';
 import content from './components/redux/reducers/content.reducer';
+import supported from './components/redux/reducers/supported.reducer';
 
 const storeInstance = createStore(
   combineReducers({
     feeling,
-    content
+    content,
+    supported
   }),
   applyMiddleware(logger)
 )
