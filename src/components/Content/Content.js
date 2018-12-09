@@ -24,6 +24,7 @@ class Content extends Component {
       <div>
         <Steps step={"2"} />
         <h2>How well are you understanding the content?</h2>
+        {/* Star rating */}
         <Rating
           initialRating={this.state.content}
           onClick={this.handleStarClick}
@@ -31,7 +32,6 @@ class Content extends Component {
           fullSymbol={<Star />}
         />
         <button onClick={this.handleNext}>Next</button>
-        {JSON.stringify(this.state.content)}
       </div>
     );
   }

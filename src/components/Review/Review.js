@@ -1,12 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
 class Review extends Component {
   
   submitFeedback = () => {
     const data = {
-      feeling: this.props.feeling
+      feeling: this.props.feeling,
+      content: this.props.content,
+      support: this.props.supported,
+      comment: this.props.comment
     }
+
+    axios.post('/submit', data)
+      .then(res => {
+        this.props.dispatch({type: 'CLEAR_INFO'});
+        this.props.history.push('/');
+      })
+      .catch(err => {
+        console.log('Error in POST ', err);
+      });
   }
 
   render() {
@@ -23,7 +37,7 @@ class Review extends Component {
         <p>Understanding: {this.props.content}</p>
         <p>Support: {this.props.supported}</p>
         <p>Comments: {this.props.comment}</p>
-        <button disabled={!isEnabled}>Submit</button>
+        <button disabled={!isEnabled} onClick={this.submitFeedback}>Submit</button>
       </div>
     );
   }
@@ -38,4 +52,4 @@ const mapStateToProps = store => {
   }
 }
 
-export default connect(mapStateToProps)(Review);
+export default connect(mapStateToProps)(withRouter(Review));
