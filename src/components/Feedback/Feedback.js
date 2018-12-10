@@ -31,7 +31,8 @@ class Feedback extends Component {
         <td>{feedback.understanding}</td>
         <td>{feedback.support}</td>
         <td>{feedback.comments}</td>
-        <td><DeleteSweep style={iconStyle} onClick={() => this.deleteFeedback(feedback.id)}></DeleteSweep></td>
+        <td><DeleteSweep style={iconStyle} onClick={e => window.confirm('Are you sure you want to delete this?') && 
+          this.deleteFeedback(feedback.id)}></DeleteSweep></td>
       </tr>
     )
   }
