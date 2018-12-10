@@ -30,7 +30,7 @@ class Review extends Component {
       feeling: this.props.feeling,
       content: this.props.content,
       support: this.props.supported,
-      comment: this.props.comment
+      comment: String(this.props.comment)
     }
 
     axios.post('/submit', data)
