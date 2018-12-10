@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Feedback from '../Feedback/Feedback';
 import axios from 'axios';
+import './Admin.css';
 
 class Admin extends Component {
 
@@ -27,7 +28,7 @@ class Admin extends Component {
       return <Feedback refreshFeedbackTable={this.refreshFeedbackTable} key={feed.id} feedback={feed} />;
     })
     return (
-      <div>
+      <div className="tableContainer">
         <h2>Feedback Results</h2>
         <table>
           <thead>
