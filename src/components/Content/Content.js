@@ -16,8 +16,24 @@ class Content extends Component {
     content: 0
   }
 
+  getInitialRating = () => {
+    // Keep star rating selected by user
+    // Convert arr to number 
+    let num = Number(this.props.content);
+    return this.state.content === 0 ? num : this.state.content;
+  }
+
   handleNext = (event) => {
-    this.props.dispatch({type: 'ADD_CONTENT', payload: this.state.content});
+    let data;
+    // Check if state is 0
+    if(this.state.content === 0) {
+      // if 0, use redux store saved rating
+      data = this.props.content;
+    } else {
+      // Use updated rating
+      data = this.state.content;
+    }
+    this.props.dispatch({type: 'ADD_CONTENT', payload: data});
     this.props.history.push('/3');
   }
 
@@ -32,7 +48,7 @@ class Content extends Component {
         <h2>How well are you understanding the content?</h2>
         {/* Star rating */}
         <Rating
-          initialRating={this.state.content}
+          initialRating={this.getInitialRating()}
           onClick={this.handleStarClick}
           emptySymbol={<StarBorder style={styles.largeIcon} />}
           fullSymbol={<Star style={styles.largeIcon} />}
@@ -43,4 +59,10 @@ class Content extends Component {
   }
 }
 
-export default connect()(Content);
+const mapStateToProps = store => {
+  return {
+    content: store.content
+  }
+}
+
+export default connect(mapStateToProps)(Content);

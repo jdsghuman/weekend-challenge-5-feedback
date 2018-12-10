@@ -1,11 +1,28 @@
 import React, { Component } from 'react';
 import DeleteSweep from '@material-ui/icons/DeleteSweep';
+import axios from 'axios';
+import { connect } from 'react-redux';
 
+// Admin icon styles
 const iconStyle = {
-  fontSize: '2rem'
+  fontSize: '2rem',
+  cursor: 'pointer'
 }
 
 class Feedback extends Component {
+
+  deleteFeedback = (id) => {
+    console.log('delete', id);
+    axios.delete(`/feedback/${id}`)
+      .then(res => {
+        console.log('Deleted');
+        this.props.refreshFeedbackTable();
+      })
+      .catch(err => {
+        console.log('error!');
+      })
+  }
+
   render() {
     let feedback = this.props.feedback;
     return (
@@ -14,10 +31,10 @@ class Feedback extends Component {
         <td>{feedback.understanding}</td>
         <td>{feedback.support}</td>
         <td>{feedback.comments}</td>
-        <td><DeleteSweep style={iconStyle}></DeleteSweep></td>
+        <td><DeleteSweep style={iconStyle} onClick={() => this.deleteFeedback(feedback.id)}></DeleteSweep></td>
       </tr>
     )
   }
 }
 
-export default Feedback;
+export default connect()(Feedback);
