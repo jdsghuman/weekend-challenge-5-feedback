@@ -26,3 +26,35 @@ h2 {
   padding: 5px;
   padding-top: 0px;
 }
+
+button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 14px;
+  padding: 8px 28px;
+  color: #08a99e;
+  border: 1px solid #08a99e;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border-radius: 4px;
+  transition: all .2s linear;
+}
+
+button:hover {
+  background-color: #08a99e;
+  color: #ffffff;
+}
+
+button:disabled,
+button[disabled] {
+  opacity: 0.65; 
+  color: #888888;
+  cursor: not-allowed;
+  border: 1px solid #888888;
+}
+
+button:disabled:hover {
+  background-color: #ffffff;
+  color: #888888;
+  border: 1px solid #888888;
+}
