@@ -72,12 +72,12 @@ class Review extends Component {
   }
 }
 
-const mapStateToProps = store => {
+const mapStateToProps = reduxStore => {
   return {
-    feeling: store.feeling,
-    content: store.content,
-    supported: store.supported,
-    comment: store.comment
+    feeling: reduxStore.feeling,
+    content: reduxStore.content,
+    supported: reduxStore.supported,
+    comment: reduxStore.comment
   }
 }
 
