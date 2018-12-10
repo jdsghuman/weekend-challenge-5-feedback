@@ -10,7 +10,7 @@ class Admin extends Component {
   }
 
   componentDidMount() {
-    this.props.dispatch({ type: 'GET_FEEDBACK'});
+    // this.props.dispatch({ type: 'GET_FEEDBACK'});
     this.refreshFeedbackTable();
   }
 
@@ -23,8 +23,8 @@ class Admin extends Component {
   }
 
   render() {
-    let feedbackResult = this.state.feedback.map(feed => {
-      return <Feedback key={feed.id} feedback={feed} />;
+    let feedbackResult = this.state.feedback.reverse().map(feed => {
+      return <Feedback refreshFeedbackTable={this.refreshFeedbackTable} key={feed.id} feedback={feed} />;
     })
     return (
       <div>

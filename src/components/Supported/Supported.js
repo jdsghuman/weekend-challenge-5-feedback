@@ -16,8 +16,24 @@ class Supported extends Component {
     supported: 0
   }
 
+  getInitialRating = () => {
+    // Keep star rating selected by user
+    // Convert arr to number 
+    let num = Number(this.props.supported);
+    return this.state.supported === 0 ? num : this.state.supported;
+  }
+  
   handleNext = (event) => {
-    this.props.dispatch({type: 'ADD_SUPPORTED', payload: this.state.supported});
+    let data;
+    // Check if state is 0
+    if(this.state.supported === 0) {
+      // if 0, use redux store saved rating
+      data = this.props.supported;
+    } else {
+      // Use updated rating
+      data = this.state.supported;
+    }
+    this.props.dispatch({type: 'ADD_SUPPORTED', payload: data});
     this.props.history.push('/4');
   }
 
@@ -32,7 +48,7 @@ class Supported extends Component {
         <h2>How well are you being supported?</h2>
         {/* Star rating */}
         <Rating
-          initialRating={this.state.supported}
+          initialRating={this.getInitialRating()}
           onClick={this.handleStarClick}
           emptySymbol={<StarBorder style={styles.largeIcon} />}
           fullSymbol={<Star style={styles.largeIcon} />}
@@ -43,4 +59,10 @@ class Supported extends Component {
   }
 }
 
-export default connect()(Supported);
+const mapStateToProps = store => {
+  return {
+    supported: store.supported
+  }
+}
+
+export default connect(mapStateToProps)(Supported);
