@@ -58,3 +58,15 @@ button:disabled:hover {
   color: #888888;
   border: 1px solid #888888;
 }
+
+.reviewError {
+  color: #ea2762;
+}
+
+.reviewScore {
+  color: #08a99e;
+}
+
+.requiredFieldError {
+  color: #ea2762;
+}
