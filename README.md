@@ -1,5 +1,8 @@
 # Redux Feedback Loop
 
+### PRODUCTION URL 
+https://fierce-retreat-97114.herokuapp.com/#/
+
 ### SETUP
 
 Create your database and tables using the provided `data.sql` file. Start the server.
