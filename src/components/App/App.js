@@ -8,7 +8,7 @@ import Review from '../Review/Review';
 import Confirmation from '../Confirmation/Confirmation';
 import Admin from '../Admin/Admin';
 
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
